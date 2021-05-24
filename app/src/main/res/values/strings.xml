@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Orpilla_AgoraPh</string>
+    <string name="followers">followers:</string>
+    <string name="john">John</string>
+    <string name="name">name:</string>
+    <string name="company">company:</string>
+    <string name="blog">blog:</string>
+    <string name="notes">Notes:</string>
+    <string name="save">save</string>
+    <string name="apple">Apple</string>
+    <string name="www_apple_com">www.apple.com</string>
+    <string name="user_s_avatar">user\'s avatar</string>
+    <string name="note_that_has_to_be_saved_locally_can_be_empty">note that has to be saved locally, can be empty</string>
+    <string name="_100">100</string>
+    <string name="following">following: </string>
+    <string name="details">details</string>
+    <string name="username">Username</string>
+    <string name="user_avatar">user avatar</string>
+    <string name="show_if_profile_has_notes">show if profile has notes</string>
 </resources>
