@@ -3,7 +3,7 @@ package com.example.orpilla_agoraph.model
 
 import com.squareup.moshi.Json
 
-data class UserItem(
+data class ProfileItem(
     @Json(name = "login")
     var login: String? = "",
     @Json(name = "id")
@@ -39,5 +39,33 @@ data class UserItem(
     @Json(name = "type")
     var type: String? = "",
     @Json(name = "site_admin")
-    var siteAdmin: Boolean? = false
+    var siteAdmin: Boolean? = false,
+    @Json(name = "name")
+    var name: String? = "",
+    @Json(name = "company")
+    var company: String? = "",
+    @Json(name = "blog")
+    var blog: String? = "",
+    @Json(name = "location")
+    var location: String? = "",
+    @Json(name = "email")
+    var email: Any? = Any(),
+    @Json(name = "hireable")
+    var hireable: Any? = Any(),
+    @Json(name = "bio")
+    var bio: String? = "",
+    @Json(name = "twitter_username")
+    var twitterUsername: Any? = Any(),
+    @Json(name = "public_repos")
+    var publicRepos: Int? = 0,
+    @Json(name = "public_gists")
+    var publicGists: Int? = 0,
+    @Json(name = "followers")
+    var followers: Int? = 0,
+    @Json(name = "following")
+    var following: Int? = 0,
+    @Json(name = "created_at")
+    var createdAt: String? = "",
+    @Json(name = "updated_at")
+    var updatedAt: String? = ""
 )

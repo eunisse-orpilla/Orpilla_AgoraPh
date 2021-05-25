@@ -1,5 +1,6 @@
 package com.example.orpilla_agoraph
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -50,6 +51,9 @@ class MainActivity : AppCompatActivity(), UserListAdapter.OnItemClickListener {
     }
 
     override fun onItemClicked(item: UserItem) {
-        TODO("Not yet implemented")
+        val intent = Intent(this, ProfileActivity::class.java)
+        intent.putExtra(ProfileActivity.USER_ID, item.id)
+        intent.putExtra(ProfileActivity.USER_NAME, item.login)
+        startActivity(intent)
     }
 }
