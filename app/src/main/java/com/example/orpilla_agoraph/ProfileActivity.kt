@@ -1,13 +1,16 @@
 package com.example.orpilla_agoraph
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.orpilla_agoraph.data.ApiService
 import com.example.orpilla_agoraph.model.ProfileItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.user_card.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,15 +30,43 @@ class ProfileActivity : AppCompatActivity() {
 
         setSupportActionBar(tb_profile)
         supportActionBar?.apply {
-            title = mUserName
-
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
+
+        notes()
+    }
+
+    private fun notes(){
+        val sharedPreferences = getSharedPreferences("SP_INFO", Context.MODE_PRIVATE)
+
+        btn_save.setOnClickListener {
+            val noteInput = et_notes.text.toString().trim()
+
+            //save data
+            val editor = sharedPreferences.edit()
+            editor.putString("NOTE", noteInput)
+            editor.apply()
+        }
+
+        //show data
+        val note = sharedPreferences.getString("NOTE", "")
+        et_notes.setText(note)
+
+        //show note image in mainactivity if note is not empty
+//        val text = et_notes.text.toString()
+//        et_notes.text.isNotEmpty().apply {
+//            img_note.visibility = View.VISIBLE
+//        }
+
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun initItems(mId: Int, mUserName: String) {
-//        tb_text_name.setText(mUserName)
+        tb_text_name.setText(mUserName)
         name.setText(mUserName)
 
         val service = ApiService.create()
