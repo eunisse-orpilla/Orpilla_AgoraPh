@@ -3,14 +3,11 @@ package com.example.orpilla_agoraph
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.orpilla_agoraph.data.ApiService
 import com.example.orpilla_agoraph.model.ProfileItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_profile.*
-import kotlinx.android.synthetic.main.user_card.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
