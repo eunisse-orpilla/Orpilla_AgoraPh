@@ -3,6 +3,7 @@ package com.example.orpilla_agoraph
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.orpilla_agoraph.data.ApiService
 import com.example.orpilla_agoraph.model.ProfileItem
@@ -44,19 +45,15 @@ class ProfileActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.putString("NOTE", noteInput)
             editor.apply()
+            Toast.makeText(applicationContext, "Note Saved!", Toast.LENGTH_SHORT).show()
         }
 
         //show data
         val note = sharedPreferences.getString("NOTE", "")
         et_notes.setText(note)
 
-        //show note image in mainactivity if note is not empty
-//        val text = et_notes.text.toString()
-//        et_notes.text.isNotEmpty().apply {
-//            img_note.visibility = View.VISIBLE
-//        }
-
     }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true

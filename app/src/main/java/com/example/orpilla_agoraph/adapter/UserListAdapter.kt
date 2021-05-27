@@ -28,7 +28,7 @@ class UserListAdapter(private val onItemClickListener: OnItemClickListener) :
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<UserItem>() {
             override fun areItemsTheSame(oldItem: UserItem, newItem: UserItem): Boolean =
-                oldItem.id == newItem.id
+                oldItem.id == newItem.id && oldItem.login == newItem.login
 
             override fun areContentsTheSame(oldItem: UserItem, newItem: UserItem): Boolean =
                 oldItem == newItem

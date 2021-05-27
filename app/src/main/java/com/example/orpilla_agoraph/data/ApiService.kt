@@ -15,6 +15,7 @@ interface ApiService {
 
     @GET("users?since=0")
     fun getUsers(): Call<List<UserItem>>
+//    @Query("since") last_id: String
 
     @GET("users/{login}")
     fun getUserProfile(@Path("login") login: String): Call<ProfileItem>

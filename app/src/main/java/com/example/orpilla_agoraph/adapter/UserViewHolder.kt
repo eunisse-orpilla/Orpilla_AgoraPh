@@ -2,8 +2,8 @@ package com.example.orpilla_agoraph.adapter
 
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
-import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
+import com.example.orpilla_agoraph.ProfileActivity
 import com.example.orpilla_agoraph.databinding.UserCardBinding
 import com.example.orpilla_agoraph.model.UserItem
 import com.squareup.picasso.Picasso
@@ -30,6 +30,7 @@ class UserViewHolder(private val binding: UserCardBinding) : RecyclerView.ViewHo
             val filter = ColorMatrixColorFilter(matrixInvert)
             myDrawable.colorFilter = filter
             binding.profileImage.invalidate()
+
         }
 
         onItemClickListener?.let { listener ->

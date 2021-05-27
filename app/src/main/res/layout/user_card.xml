@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
             android:layout_weight="1"
+            android:visibility="gone"
             android:contentDescription="@string/show_if_profile_has_notes"
             android:scaleType="center"
             app:srcCompat="@drawable/ic_baseline_note_24" />
